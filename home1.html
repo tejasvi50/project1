@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page-Crud operations using popup with Js</title>
+    <link rel="stylesheet" href="stylesheet.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <img src="../../../Images/logo.png" alt="logo" class="logo"/>
+      <div id="container">
+        <a href="#" >Home
+        </a>
+        <a href="#" >About
+        </a>
+        <a href="#" >Services
+        </a>
+        <a href="#" >Client
+        </a>
+        <a href="#" >Blog
+        </a>
+        <a href="#" >Contact
+        </a>
+      </div>
+      <div class="container">
+        <a href="#" class="elements">
+          <i style="font-size:24px" class="fa">&#xf007;
+          </i> Sign Up 
+        </a>
+        <a href="#" id="elements">
+          <i style="font-size:24px" class="fa">&#xf090;
+          </i>Login
+        </a>
+      </div>
+    </header>
+    <main>
+      <h2>Delete multiple records from database using PHP
+      </h2>
+      <div>
+        <button class="open-button" id="popup" onclick="openForm()">Add new 
+          <span>+
+          </span>
+        </button>
+      </div>
+      <div id="student-form" class="form-popup">
+        <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="on" class="form-container">
+          <div class="popup">
+            <div class="modal-content">
+              <h3>CRUD Application Form 
+                <span class="close-btn" id="close-btn">&times;
+                </span>
+              </h3>
+              <label>S.no
+              </label>
+              <span class="fill-form">*
+              </span>
+              </label>
+            <label class="align">Name
+              <span class="fill-form">*
+              </span>
+            </label>
+            <label class="align">Email
+              <span class="fill-form">*
+              </span>
+            </label>
+            <label class="align">Contact
+              <span class="fill-form">*
+              </span>
+            </label>
+            <div class="form-element">
+              <input type="number" name="sno" placeholder="Sno" id="sno">
+              <span class="validation-error hide" id="snoValidationError">
+              </span>
+              <input type="text" name="Name" placeholder="Name" id="name">
+              <span class="validation-error hide" id="nameValidationError">
+            </span>
+              <input type="email" name="Email" placeholder="Email" id="email">
+              <span class="validation-error hide" id="emailValidationError">
+            </span>
+              <input type="number" name="Contact" placeholder="Contact" id="contact">
+              <span class="validation-error hide" id="contactValidationError">
+            </span>
+            </div>
+            <button class="save">Save
+            </button>
+            <div class="border">
+              <button class="btncancel" id="btn" onclick="closeForm()">Close
+              </button>
+            </div>
+          </div>
+          </div>
+        </form>
+      </div>
+    <div class = "student-table">
+      <table class="list" id="studentList" border="1" cellpadding="10" cellspacing="0">
+        <thead>
+          <tr>
+            <th>S.no
+            </th>
+            <th>Name
+            </th>
+            <th>Email Id
+            </th>
+            <th>Contact
+            </th>
+            <th>Actions
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+    </main>
+  <footer>
+    <section class="box">
+      <img src="../../../images/logo.png" alt="logo"/>
+      <p>Suspendisse hendrerit tellus laoreet luctus pharetra.Aliquam porttitor vitae orci nec ultricies.Curbatitur vechicula,libero eget faucibus faucibus,purus erat elerifend enim,porta pellentesque ex miut sem.
+      </p>
+      <p>	&copy; 2014 BS3 UI Kit,All rights reserved
+      </p>
+    </section>
+    <section class="sec1">
+      <h6>MENU _
+      </h6>
+      <li>
+        <a href="#">TRAVEL
+        </a>
+      </li>
+      <li>
+        <a href="#">NATURE
+        </a>
+      </li>
+      <li>
+        <a href="#">EXPLORES
+        </a>
+      </li>
+      <li>
+        <a href="#">SCIENCE
+        </a>
+      </li>
+      <li>
+        <a href="#">ADVICE
+        </a>
+      </li>
+    </section>
+    <section class="sec2">
+      <li>
+        <a href="#">About Us
+        </a>
+      </li>
+      <li>
+        <a href="#">Contacts
+        </a>
+      </li>
+      <li>
+        <a href="#">Terms & Conditions
+        </a>
+      </li>
+      <li>
+        <a href="#">Privacy Policy
+        </a>
+      </li>
+    </section>
+    <section class="sec3">
+      <h6>FOLLOW US
+      </h6>
+      <li>
+        <a href="#">Facebook
+        </a>
+      </li>
+      <li>
+        <a href="#">Twitter
+        </a>
+      </li>
+      <li>
+        <a href="#">Instagram
+        </a>
+      </li>
+      <li>
+        <a href="#">RSS
+        </a>
+      </li>
+    </section>
+    <section class="sec4">
+      <h6>NEWSLETTER
+      </h6>
+      <P>A rover wearing a fuzzy suit doesn't alarm the real penguins
+      </P>
+      <div class="inputContainer">
+        <input type="text" name="search" placeholder="Search for...">   
+        <!-- <button type="submit"><i class="fa fa-envelope icon" id="envelope"></i></button> -->
+      </div>
+    </section>
+  </footer>
+  <script src="home_page.js">
+  </script>
+  </body>
+</html>
